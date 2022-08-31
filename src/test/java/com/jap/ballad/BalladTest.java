@@ -25,7 +25,7 @@ ballad = new Ballad();
     @Test
     public void givenCorrectDataFromFileCheckData() throws FileNotFoundException {
         String balladData = "";
-        String balladText = "'Twas the night before Christmas, when all through the house\n" +
+        String balladText = "'Twas  night before Christmas, when all through the house\n" +
                 "Not a creature was stirring, not even a mouse;\n" +
                 "The stockings were hung by the chimney with care,\n" +
                 "In hopes that St. Nicholas soon would be there;\n" +

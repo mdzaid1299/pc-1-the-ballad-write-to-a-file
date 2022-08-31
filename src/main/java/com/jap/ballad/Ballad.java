@@ -1,11 +1,22 @@
 package com.jap.ballad;
 
+import java.io.BufferedWriter;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class Ballad {
     public void writePoemToAFile(String fileName, String data){
-
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter(fileName);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write(data);
+            bufferedWriter.write("\n");
+            bufferedWriter.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
@@ -25,5 +36,8 @@ public class Ballad {
                 "Away to the window I flew like a flash,\n" +
                 "Tore open the shutters and threw up the sash.\n";
         // Call the function and write the ballad to the file
+        Ballad ballad1 = new Ballad();
+        String fileName = "src/main/resources/ballad.txt";
+        ballad1.writePoemToAFile(fileName,ballad);
     }
 }
